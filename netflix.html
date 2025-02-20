@@ -3,71 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix
-
-    </title>
+    <title>Netflix</title>
     <link rel="stylesheet" href="netflix.css"> 
     <script src="login.js" defer></script>
+    <style>
+        /* Basic mobile styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .back-img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+        }
+
+        .login-ka {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .panel1 h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .search-input1, .search-input2 {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background: #333;
+            color: white;
+        }
+
+        .signin-button, .passcode {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background: red;
+            color: white;
+            cursor: pointer;
+        }
+
+        .passcode {
+            background: #333;
+        }
+
+        .or, .forgot, .remember, .new, .link, .unwan {
+            margin: 10px 0;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .link a {
+            color: red;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .login-ka {
+                padding: 15px;
+            }
+            .panel1 h1 {
+                font-size: 20px;
+            }
+            .search-input1, .search-input2, .signin-button, .passcode {
+                font-size: 14px;
+            }
+            footer {
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
     <img src="IN-en-20250113-TRIFECTA-perspective_febfa442-23d9-45f3-937e-72f8b971f7a9_small.jpg" alt="back" class="back-img">
     <div class="overlay">
-    <div class="login-ka">
-        <div class="panel1">
-            <h1>Sign ln</h1>
-    </div>
-    <div class="inputs">
-        <input placeholder="   Email or moblie number" class="search-input1">
-        <input type="password" id="password" name="password" placeholder="  Password" required class="search-input2">
-        <button class="signin-button">Sign In</button>
-        <button class="passcode">Use a sign-in code</button>
-    </div>
-    <div class="or">
-        <p>OR</p>
-    </div>
-    <div class="forgot">
-        <a href="https://www.netflix.com/in/LoginHelp">Forgot Password?</a>
-    </div>
-    <div class="remember">
-        <input type="checkbox" id="remember" name="remember" value="me" class="check">
-<label for="remember"> Remember me</label><br>
-    </div>
-    <div class="new">
-        <p>New to Netflix?</p>
-    </div>
-    <div class="link">
-        <a href="https://www.netflix.com/in/">Sign up now.</a>
-    </div>
-    <div class="unwan">
-        <p>This page is protected by Google reCAPTCHA to</p>
-        <p> ensure you're not a bot.</p>
-        
-    </div>
-    </div>
-</div>
-</div>
-    <header>
-        <div class="navbar">
-            <div class="logo"></div>
-            
-    </div>
-    </header>
-    <footer>
-        <div class="back">
-                <p>Questions? Call</p>
-                <a>000-800-919-1743</a>
-                <div class="faq">
-                    <a href="https://help.netflix.com/en/node/412">FAQ</a>
-                </div>
-                <div class="helg">
-                    <a href="https://help.netflix.com/en">Help Centre</a>
-                </div>
-                <div class="terq">
-                    <a href="https://help.netflix.com/legal/termsofuse">Term of Use</a>
-                </div>
-                
+        <div class="login-ka">
+            <div class="panel1">
+                <h1>Sign In</h1>
+            </div>
+            <div class="inputs">
+                <input type="text" placeholder="Email or mobile number" class="search-input1">
+                <input type="password" id="password" name="password" placeholder="Password" required class="search-input2">
+                <button class="signin-button">Sign In</button>
+                <button class="passcode">Use a sign-in code</button>
+            </div>
+            <div class="or"><p>OR</p></div>
+            <div class="forgot">
+                <a href="https://www.netflix.com/in/LoginHelp">Forgot Password?</a>
+            </div>
+            <div class="remember">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+            </div>
+            <div class="new">
+                <p>New to Netflix? <a href="https://www.netflix.com/in/">Sign up now.</a></p>
+            </div>
+            <div class="unwan">
+                <p>This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
             </div>
         </div>
+    </div>
+    
+    <footer>
+        <p>Questions? Call <a href="tel:000-800-919-1743">000-800-919-1743</a></p>
+        <p><a href="https://help.netflix.com/en/node/412">FAQ</a> | 
+           <a href="https://help.netflix.com/en">Help Centre</a> | 
+           <a href="https://help.netflix.com/legal/termsofuse">Terms of Use</a>
+        </p>
     </footer>
 </body>
 </html>
